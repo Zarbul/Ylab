@@ -2,13 +2,10 @@ from math import factorial
 
 
 def zeros(num: int) -> int:
-    fact = str(factorial(num))[::-1]
     count_zeros = 0
-    for num in fact:
-        if num == '0':
-            count_zeros += 1
-        else:
-            break
+    while num > 0:
+        num //= 5
+        count_zeros += num
     return count_zeros
 
 
